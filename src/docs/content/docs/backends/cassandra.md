@@ -51,8 +51,6 @@ Where:
 When operating Reaper in a production environment, it is recommended that:
 
 * An RF (Replication Factor) of 3 be used in each data center for the `reaper_db` keyspace. This is to ensure that all Reaper state data is still available should a node in the cluster be unavailable.
-* The `NetworkTopologyStrategy` be used for the replication strategy of the keyspace. This is because `LOCAL_*` requests will fail if the `SimpleNetworkingStrategy` is used in an environment where there is more than one data center defined.
-
-Note that by default the `reaper_db` keyspace uses an RF of 1 and Reaper will write to the tables in that keyspace at a CL (Consistency Level) of QUORUM sometimes and at LOCAL_QUORUM other times. The only exception to this are prepared statements which are written at a CL of LOCAL_ONE.
+* The `NetworkTopologyStrategy` should be used for the replication strategy of the keyspace. This is because `LOCAL_*` requests will fail if the `SimpleNetworkingStrategy` is used in an environment where there is more than one data center defined.
 
 Schema initialization and migration will be done automatically upon startup.

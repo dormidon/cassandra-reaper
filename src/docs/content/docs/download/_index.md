@@ -31,4 +31,4 @@ The current development version can be downloaded in the following packaging for
  
 For a docker image, please see the [Docker](docker) section.
 
-Once you've downloaded the proper package for your OS, head over to the [Install and Run](install) section.
+Once the appropriate package has been downloaded, head over to the [Install and Run](install) section.
